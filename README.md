@@ -1,10 +1,16 @@
-# Ebalogel
+# Ebalóger
 
-It's a simle logs forward tool that's receive logs by UDP socket and emits to WebSocket clients
+It's a simle logs forward tool that collect logs using integrated UDP socket server and:
+
+- transform different formats to common one
+- (in progress) save copy to ClickHouse database
+- emits handled version to WebSocket clients
+- (in progress) on connect read and emit backlog from ClickHouse
+- uses logspout for subscriptions management
+
 
 
 ## License
-
 
 ```
    Copyright 2018 Dmitry Rodin

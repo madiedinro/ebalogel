@@ -1,0 +1,23 @@
+{ "loggerName":"band.log", "asciTime":"2018-09-05 07:46:33,514", "levelNo":"10", "levelName":"DEBUG", "message":"> checking 1x2"}
+{ "loggerName":"band.log", "asciTime":"2018-09-05 07:46:33,514", "levelNo":"10", "levelName":"DEBUG", "message":"> checking 2x2"}
+{ "loggerName":"band.log", "asciTime":"2018-09-05 07:46:33,519", "levelNo":"10", "levelName":"DEBUG", "message":"> checking 3x2"}
+{ "loggerName":"band.log", "asciTime":"2018-09-05 07:46:33,519", "levelNo":"10", "levelName":"DEBUG", "message":"> checking 4x2"}
+{ "loggerName":"band.log", "asciTime":"2018-09-05 07:46:33,519", "levelNo":"10", "levelName":"DEBUG", "message":"> checking 5x2"}
+{ "loggerName":"band.log", "asciTime":"2018-09-05 07:46:33,519", "levelNo":"10", "levelName":"DEBUG", "message":"> checking 0x3"}
+{"level":20,"time":1536140832700,"msg":"<---","pid":26,"hostname":"front","name":"Dispatcher","name":"RPCAdapterRedis","jsonrpc":"2.0","id":"4101","from":"frontier","to":"director","result":{"app_state":"running","app_started":1536133541462,"app_uptime":7291238,"methods":[]},"v":1}
+{"level":20,"time":1536140837702,"msg":"<---","pid":26,"hostname":"front","name":"Dispatcher","name":"RPCAdapterRedis","jsonrpc":"2.0","from":"frontier","to":"director","method":"director:__iamalive:frontier","params":{"name":"frontier"},"v":1}
+{"level":20,"time":1536140837704,"msg":" --> ","pid":26,"hostname":"front","name":"Dispatcher","name":"RPCAdapterRedis","jsonrpc":"2.0","method":"frontier:__status:director","params":{"register":[]},"id":"4104","v":1}
+{"level":20,"time":1536140837704,"msg":"<---","pid":26,"hostname":"front","name":"Dispatcher","name":"RPCAdapterRedis","jsonrpc":"2.0","id":"4104","from":"frontier","to":"director","result":{"app_state":"running","app_started":1536133541462,"app_uptime":7296242,"methods":[]},"v":1}
+{"level":20,"time":1536140842708,"msg":"<---","pid":26,"hostname":"front","name":"Dispatcher","name":"RPCAdapterRedis","jsonrpc":"2.0","from":"frontier","to":"director","method":"director:__iamalive:frontier","params":{"name":"frontier"},"v":1}
+{"level":20,"time":1536140842711,"msg":" --> ","pid":26,"hostname":"front","name":"Dispatcher","name":"RPCAdapterRedis","jsonrpc":"2.0","method":"frontier:__status:director","params":{"register":[]},"id":
+Server worker is ready to accept messages. [ID: 1 | PID: 41]
+root INFO Theia app listening on http://0.0.0.0:8000.
+Received message which is neither a response nor a notification message:
+"8000"
+yarn run v1.6.0
+$ /home/theia/node_modules/.bin/theia start /home/theia/project --hostname=0.0.0.0 --port=8000
+Starting server worker...
+Server worker has been started. [ID: 1 | PID: 42]
+Server worker is ready to accept messages. [ID: 1 | PID: 42]
+root INFO Theia app listening on http://0.0.0.0:8000.
+Received message which is neither a response nor a notification message:
