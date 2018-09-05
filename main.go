@@ -21,7 +21,7 @@ func getEnv(env string, def string) string {
 func main() {
 
 	httpListen := getEnv("HTTP_LISTEN", ":8080")
-	sockListen := getEnv("SOCK_LISTEN", ":5000")
+	sockListen := getEnv("SOCK_LISTEN", ":8090")
 
 	r := gin.Default()
 	m := melody.New()
@@ -46,7 +46,7 @@ func listenSocket(m *melody.Melody, listen string) {
 	}
 	// Close the listener when the application closes.
 	defer conn.Close()
-	fmt.Printf("Listening on %s", ":3333")
+	fmt.Printf("Listening on %s", listen)
 
 	for {
 		message, err := bufio.NewReader(conn).ReadString('\n')
