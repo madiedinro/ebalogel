@@ -8,7 +8,11 @@ It's a simle logs forward tool that collect logs using integrated UDP socket ser
 - (in progress) on connect read and emit backlog from ClickHouse
 - uses logspout for subscriptions management
 
+## Frontend
 
+React + MobX + DOM virtualization
+
+![frontend preview](media/ebaloger-front.jpg)
 
 ## License
 
