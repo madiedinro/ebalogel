@@ -53,7 +53,6 @@ func listenSocket(m *melody.Melody, listen string) {
 		if err != nil {
 			fmt.Println("Error reading:", err.Error())
 		}
-		fmt.Print(message)
 		m.Broadcast([]byte(message))
 	}
 }
