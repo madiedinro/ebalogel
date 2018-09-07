@@ -23,28 +23,15 @@ type ElState struct {
 	SnowNode      *snowflake.Node
 }
 
-func (s *ElState) initShowFlake() {
-	node, err := snowflake.NewNode(1)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	s.SnowNode = node
-}
-
-func (s *ElState) id64() uint64 {
-	id := s.SnowNode.Generate()
-	return uint64(id.Int64())
-}
-
 func main() {
 
-	s := &ElState{}
+	s := new(ElState)
 	s.HTTPListen = getEnv("HTTP_LISTEN", ":8080")
 	s.SocketListen = getEnv("SOCK_LISTEN", ":8090")
 	s.LogsListen = "80"
 	s.ClickHouseDSN = getEnv("CH_DSN", "8091")
 
+	s.initShowFlake()
 	s.startHTTP()
 	s.startWS()
 
@@ -67,18 +54,30 @@ func main() {
 	}
 }
 
+func (s *ElState) id64() uint64 {
+	id := s.SnowNode.Generate()
+	return uint64(id.Int64())
+}
+
+func (s *ElState) initShowFlake() {
+	node, err := snowflake.NewNode(1)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	s.SnowNode = node
+}
+
 func (s *ElState) startHTTP() {
-	httpd := gin.Default()
-	go httpd.Run(s.HTTPListen)
-	s.HTTPServer = httpd
+	s.HTTPServer = gin.Default()
+	go s.HTTPServer.Run(s.HTTPListen)
 }
 
 func (s *ElState) startWS() {
-	ws := melody.New()
+	s.WSServer = melody.New()
 	s.HTTPServer.GET("/logs", func(gc *gin.Context) {
-		ws.HandleRequest(gc.Writer, gc.Request)
+		s.WSServer.HandleRequest(gc.Writer, gc.Request)
 	})
-	s.WSServer = ws
 }
 
 func toJSON(value interface{}) string {
