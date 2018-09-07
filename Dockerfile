@@ -16,7 +16,7 @@ FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
 WORKDIR /
-COPY --from=builder /go/src/github.com/madiedinro/ebalogel/ebaloger /usr/bin/ebaloger
+COPY --from=builder /go/src/github.com/madiedinro/ebaloger/ebaloger /usr/bin/ebaloger
 
 ENV GIN_MODE=release
 
