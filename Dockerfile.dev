@@ -1,0 +1,15 @@
+FROM golang:alpine  as builder
+LABEL maintainer="Dmitry Rodin <madiedinro@gmail.com>"
+
+RUN apk --no-cache add ca-certificates
+
+ENV GOPATH=/go
+ENV HTTP_LISTEN=:8080
+ENV HTTP_PORT=80
+ENV SOCK_LISTEN=:5000
+
+WORKDIR /go/src/github.com/madiedinro/ebaloger
+
+COPY . .
+
+CMD ["sh"]

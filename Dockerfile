@@ -5,19 +5,19 @@ ENV HOST=0.0.0.0
 ENV PORT=3300
 ENV PORT=3300
 
-WORKDIR /go/src/github.com/madiedinro/ebalogel
+WORKDIR /go/src/github.com/madiedinro/ebaloger
 ENV GOPATH=/go
 
 COPY . .
 
-RUN go build -ldflags '-extldflags "-static"' github.com/madiedinro/ebalogel
+RUN go build -ldflags '-extldflags "-static"' github.com/madiedinro/ebaloger
 
 FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
 WORKDIR /
-COPY --from=builder /go/src/github.com/madiedinro/ebalogel/ebalogel /usr/bin/ebalogel
+COPY --from=builder /go/src/github.com/madiedinro/ebalogel/ebaloger /usr/bin/ebaloger
 
 ENV GIN_MODE=release
 
-CMD ["ebalogel"]
+CMD ["ebaloger"]
