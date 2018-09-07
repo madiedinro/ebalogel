@@ -18,10 +18,10 @@ run:
 		-p 5001:5000 \
 		madiedinro/ebaloger go run *.go
 
-tdata:
+nc-client:
 	docker run --rm --network custom --name=nc_client alpine sh -c "echo huyev\npachku\n | nc -u ncsrv 5005"
 
-nc_listen:
+nc-listen:
 	docker run --rm \
 	--network custom -p 5005:5005 \
 	--name=nc_listener --hostname=nc_listener \
