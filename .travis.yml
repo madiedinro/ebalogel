@@ -3,7 +3,7 @@ dist: trusty
 
 env:
   global:
-  - PROJECT_NAME=ebalogel
+  - PROJECT_NAME=ebaloger
   - ORG=rockstat
   - IMAGE_NAME=$ORG/$PROJECT_NAME
 
