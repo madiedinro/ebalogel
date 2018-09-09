@@ -10,8 +10,9 @@ build:
 run:
 	docker build -t madiedinro/ebaloger -f Dockerfile.dev .
 	docker run -it --rm --name=logspout --hostname=logspout \
-		-e DEBUG=1 \
-		-e LOGSPOUT=ignore \
+		-e 'DEBUG=1' \
+		-e 'LOGSPOUT=ignore' \
+		-e 'BACKLOG=false' \
 		--volume=/var/run/docker.sock:/var/run/docker.sock \
 		-p 8088:80 \
 		-p 8089:8080 \

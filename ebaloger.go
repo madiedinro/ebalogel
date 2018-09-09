@@ -75,7 +75,7 @@ func (s *ElState) startHTTP() {
 
 func (s *ElState) startWS() {
 	s.WSServer = melody.New()
-	s.HTTPServer.GET("/logs", func(gc *gin.Context) {
+	s.HTTPServer.GET("/ws", func(gc *gin.Context) {
 		s.WSServer.HandleRequest(gc.Writer, gc.Request)
 	})
 }
