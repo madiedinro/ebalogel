@@ -3,7 +3,6 @@ LABEL maintainer="Dmitry Rodin <madiedinro@gmail.com>"
 
 ENV HOST=0.0.0.0
 ENV PORT=3300
-ENV PORT=3300
 
 WORKDIR /go/src/github.com/madiedinro/ebaloger
 ENV GOPATH=/go
